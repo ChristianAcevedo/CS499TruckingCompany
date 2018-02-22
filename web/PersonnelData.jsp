@@ -1,9 +1,10 @@
 <%-- 
-    Document   : UserSignedIn
-    Created on : Feb 2, 2018, 7:25:45 PM
+    Document   : PersonnelData
+    Created on : Feb 9, 2018, 1:24:52 PM
     Author     : Owner
 --%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.ResultSetMetaData"%>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.HashMap"%>
@@ -12,10 +13,10 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 
 <%!
-    public class UserSignedIn{
+    public class PersonnelData{
 
         String URL_CS499TruckingCompany = "jdbc:mysql://aa1wk12raqf2yoe.ca2f0nfwjqou.us-east-1.rds.amazonaws.com:3306/CS499TruckingCompany";
         String USERNAME = "SeniorProject";
@@ -36,7 +37,7 @@
         Map<String, Integer> UserCookiesColumns = new HashMap<String, Integer>();
         Map<String, Integer> SignInDataColumns = new HashMap<String, Integer>();
 
-        UserSignedIn(){
+        PersonnelData(){
         
             try{
                 TruckingConnection = DriverManager.getConnection(URL_CS499TruckingCompany, USERNAME, PASSWORD);
@@ -83,7 +84,7 @@
         String UserName = "";   
         String UserID = "";
         String AccessCode = "";
-        UserSignedIn UserAccountInfo = new UserSignedIn();
+        PersonnelData UserAccountInfo = new PersonnelData();
         
         ResultSet CookiesTable = UserAccountInfo.getCookiesTable(); 
         ResultSet SignInDataTable = UserAccountInfo.getSignInDataTable();
@@ -110,59 +111,21 @@
                 ex.printStackTrace();
             }
         }
+        
+        if(AccessCode.contains("P") == false){
+            response.sendRedirect("UserSignedIn.jsp");
+        }
 
         if(SignedIn == false){
             response.sendRedirect("index.jsp");
         }
 %>
-<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Personnel Data</title>
     </head>
-    <%=AccessCode%>
-    
     <body>
-        <h1><%=UserName%> SignedIn</h1>
+        <h1>Personnel Data</h1>
     </body>
-    <table border="0">
-            <tbody>
-                <%if(AccessCode.contains("E")){%>
-                    <form name="GoToEquipmentData" action="EquipmentData.jsp" method="POST">
-                        <tr>
-                            <td><input type="submit" value="View/Update Equipment Data" name="ViewUpdateEquipmentData" /></td>
-                        </tr>
-                    </form>
-                <%}%>
-                <%if(AccessCode.contains("D")){%>
-                <form name="GoToDriverData" action="DriverData.jsp" method="POST">
-                    <tr>
-                        <td><input type="submit" value="View/Update Driver Data" name="ViewUpdateDriverData" /></td>
-                    </tr>
-                </form>
-                <%}%>
-                <%if(AccessCode.contains("M")){%>
-                <form name="GoToMaintenanceData" action="MaintenanceData.jsp" method="POST">
-                    <tr>
-                        <td><input type="submit" value="View/Update Maintenance Data" name="ViewUpdateMaintenanceData" /></td>
-                    </tr>
-                </form>
-                <%}%>
-                <%if(AccessCode.contains("P")){%>
-                <form name="GoToPersonnelData" action="PersonnelData.jsp" method="POST">
-                    <tr>
-                        <td><input type="submit" value="View/Update Personnel Data" name="ViewUpdatePersonnelData" /></td>
-                    </tr>
-                </form>
-                <%}%>
-                <%if(AccessCode.contains("S")){%>
-                <form name="GoToShippingData" action="ShippingData.jsp" method="POST">
-                    <tr>
-                        <td><input type="submit" value="View/Update Shipping Data" name="ViewUpdateShippingData" /></td>
-                    </tr>
-                </form>
-                <%}%>
-            </tbody>
-        </table>
 </html>
