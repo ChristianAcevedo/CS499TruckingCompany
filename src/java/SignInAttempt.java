@@ -76,13 +76,10 @@ public class SignInAttempt extends HttpServlet {
             }
             
             public int AddUpdateCookie(String UserID, String UserName, String CookieName, 
-                    String CookieValue, String IP, String AccessCode){
-                
+                    String CookieValue, String IP, String AccessCode){                
                 int result = 0; 
                 boolean CookieIPFound = false;
-                ResultSet CookiesTable = this.getCookies();
-                   
-
+                ResultSet CookiesTable = this.getCookies();     
                 try{                
                     while(CookiesTable.next()){
                         if(CookiesTable.getString(1).equals(UserID)){
@@ -100,10 +97,9 @@ public class SignInAttempt extends HttpServlet {
                             break;
                         }
                     }
-
                     if(CookieIPFound ==  false){
                         AddCookie = CS499Connection.prepareStatement(
-                            "INSERT INTO CS499TruckingCompany.user_cookies_data ("
+                                "INSERT INTO CS499TruckingCompany.user_cookies_data ("
                             + "cookie_id, "
                             + "user_name, "
                             + "cookie_name, "             //sign_in_history Column2
@@ -188,7 +184,7 @@ public class SignInAttempt extends HttpServlet {
                     String CookieValue = new BigInteger(130, new SecureRandom()).toString(32);
                     String CookieIP = request.getRemoteAddr().toString();
                     Cookie SignedInCookie = new Cookie(CookieName, CookieValue);
-                    response.addCookie(SignedInCookie);   
+                    response.addCookie(SignedInCookie);  
                     Validate.AddUpdateCookie(
                             Validate.UserSignInData.getString(Validate.UserSignInColumns.get("user_id")), 
                             Validate.UserSignInData.getString(Validate.UserSignInColumns.get("user_name")), 
@@ -198,7 +194,7 @@ public class SignInAttempt extends HttpServlet {
                             Validate.UserSignInData.getString(Validate.UserSignInColumns.get("access_code")));
                     //out.write(Validate.SQLStatement);
                     SignedIn = true;
-                    response.sendRedirect("UserSignedIn.jsp");   
+                    response.sendRedirect("UserSignedIn.jsp");
                 }
             }
             if(SignedIn == false){
