@@ -138,9 +138,7 @@
 
         if(SignedIn == false){
             response.sendRedirect("index.jsp");
-        }
-        
-        if(AccessCode.contains("A") == false){
+        }else if(AccessCode.contains("A") == false){
             response.sendRedirect("UserSignedIn.jsp");
         }
         

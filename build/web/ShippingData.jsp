@@ -1,7 +1,7 @@
 <%-- 
     Document   : ShippingData
     Created on : Feb 9, 2018, 1:22:43 PM
-    Author     : Jason!!
+    Author     : Owner
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -27,15 +27,21 @@
 
         PreparedStatement GetCookiesTable = null;
         PreparedStatement GetSignInDataTable = null;
+        PreparedStatement GetShippingDataTable = null;
 
         ResultSet RSCookiesTable = null;
         ResultSet RSSignInDataTable = null;
+        ResultSet RSShippingDataTable = null;
 
         ResultSetMetaData MDCookiesTable = null;
         ResultSetMetaData MDSignInDataTable = null;
+        ResultSetMetaData MDShippingDataTable = null;
 
         Map<String, Integer> UserCookiesColumns = new HashMap<String, Integer>();
         Map<String, Integer> SignInDataColumns = new HashMap<String, Integer>();
+        Map<String, Integer> ShippingDataColumns = new HashMap<String, Integer>();
+
+        Map<String, String> ShippingDataColumnsText = new HashMap<String, String>();
 
         ShippingData(){
         
@@ -43,20 +49,30 @@
                 TruckingConnection = DriverManager.getConnection(URL_CS499TruckingCompany, USERNAME, PASSWORD);
                 GetCookiesTable = TruckingConnection.prepareStatement("SELECT * FROM user_cookies_data");
                 GetSignInDataTable = TruckingConnection.prepareStatement("SELECT * FROM sign_in_data");
+                GetShippingDataTable = TruckingConnection.prepareStatement("SELECT * FROM shipping_data");
                 RSCookiesTable = GetCookiesTable.executeQuery();
                 RSSignInDataTable = GetSignInDataTable.executeQuery();
+                RSShippingDataTable = GetShippingDataTable.executeQuery();
                 MDCookiesTable = RSCookiesTable.getMetaData();
                 MDSignInDataTable = RSSignInDataTable.getMetaData();
+                MDShippingDataTable = RSShippingDataTable.getMetaData();
                 for(int MetaIndex = 1; MetaIndex <= MDCookiesTable.getColumnCount(); MetaIndex++){
                     UserCookiesColumns.put(MDCookiesTable.getColumnName(MetaIndex), MetaIndex);
                 }
                 for(int MetaIndex = 1; MetaIndex <= MDSignInDataTable.getColumnCount(); MetaIndex++){
                     SignInDataColumns.put(MDSignInDataTable.getColumnName(MetaIndex), MetaIndex);
                 }
+                for(int MetaIndex = 1; MetaIndex <= MDShippingDataTable.getColumnCount(); MetaIndex++){
+                    ShippingDataColumns.put(MDShippingDataTable.getColumnName(MetaIndex), MetaIndex);
+                }
+                for(int MetaIndex = 1; MetaIndex <= MDShippingDataTable.getColumnCount(); MetaIndex++){
+                    ShippingDataColumns.put(MDShippingDataTable.getColumnName(MetaIndex), MetaIndex);
+                    ShippingDataColumnsText.put(MDShippingDataTable.getColumnName(MetaIndex), 
+                        MDShippingDataTable.getColumnName(MetaIndex).toUpperCase().replaceAll("_", " "));
+                }
             }catch(SQLException ex){
                 ex.printStackTrace();
             }
-
         }
 
         public ResultSet getCookiesTable(){
@@ -76,6 +92,15 @@
             }
             return RSSignInDataTable;   
         }
+
+        public ResultSet getShippingDataTable(){
+            try{
+                RSShippingDataTable = GetShippingDataTable.executeQuery();
+            }catch(SQLException ex){
+                ex.printStackTrace();
+            }
+            return RSShippingDataTable;   
+        }
 }
 %>
 
@@ -88,6 +113,7 @@
         
         ResultSet CookiesTable = UserAccountInfo.getCookiesTable(); 
         ResultSet SignInDataTable = UserAccountInfo.getSignInDataTable();
+        ResultSet ShippingDataTable = UserAccountInfo.getShippingDataTable();
         Cookie cookies[] = request.getCookies();
 
         if(cookies != null){
@@ -114,9 +140,7 @@
 
         if(SignedIn == false){
             response.sendRedirect("index.jsp");
-        }
-        
-        if(AccessCode.contains("S") == false){
+        }else if(AccessCode.contains("S") == false){
             response.sendRedirect("UserSignedIn.jsp");
         }
 %>
@@ -127,5 +151,51 @@
     </head>
     <body>
         <h1>Shipping Data</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th><%=UserAccountInfo.ShippingDataColumnsText.get("shipment_id")%></th>
+                    <th><%=UserAccountInfo.ShippingDataColumnsText.get("incoming_outgoing")%></th>
+                    <th><%=UserAccountInfo.ShippingDataColumnsText.get("company")%></th>
+                    <th><%=UserAccountInfo.ShippingDataColumnsText.get("street_address")%></th>
+                    <th><%=UserAccountInfo.ShippingDataColumnsText.get("city")%></th>
+                    <th><%=UserAccountInfo.ShippingDataColumnsText.get("state")%></th>
+                    <th><%=UserAccountInfo.ShippingDataColumnsText.get("zip")%></th>
+                    <th><%=UserAccountInfo.ShippingDataColumnsText.get("vehicle_id")%></th>
+                    <th><%=UserAccountInfo.ShippingDataColumnsText.get("date_time")%></th>
+                    <th><%=UserAccountInfo.ShippingDataColumnsText.get("confirmation_flag")%></th>
+                    <th><%=UserAccountInfo.ShippingDataColumnsText.get("driver")%></th>
+                    <th><%=UserAccountInfo.ShippingDataColumnsText.get("purchase_order")%></th>
+                    <th><%=UserAccountInfo.ShippingDataColumnsText.get("shipment_manifest")%></th>
+                </tr>
+            </thead>
+            <tbody>
+                 <%try{
+                    String Received = "Not Received";
+                    while(ShippingDataTable.next()){
+                        if(ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("confirmation_flag")).equals("1")){
+                            Received = "Received";
+                        }%>
+                        <tr>
+                            <td><%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("shipment_id"))%></td>
+                            <td><%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("incoming_outgoing"))%></td>
+                            <td><%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("company"))%></td>
+                            <td><%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("street_address"))%></td>
+                            <td><%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("city"))%></td>
+                            <td><%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("state"))%></td>
+                            <td><%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("zip"))%></td>
+                            <td><%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("vehicle_id"))%></td>
+                            <td><%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("date_time"))%></td>
+                            <td><%=Received%>
+                            <td><%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("driver"))%></td>
+                            <td><%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("purchase_order"))%></td>
+                            <td><%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("shipment_manifest"))%></td>
+                        </tr>
+                    <%}%>
+                <%}catch(SQLException ex){
+                    ex.printStackTrace();
+                }%>   
+            </tbody>
+        </table>
     </body>
 </html>

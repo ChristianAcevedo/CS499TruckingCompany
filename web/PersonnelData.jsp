@@ -1,7 +1,7 @@
 <%-- 
     Document   : PersonnelData
     Created on : Feb 9, 2018, 1:24:52 PM
-    Author     : Plank!
+    Author     : Owner
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -27,15 +27,21 @@
 
         PreparedStatement GetCookiesTable = null;
         PreparedStatement GetSignInDataTable = null;
+        PreparedStatement GetPersonnelDataTable = null;
 
         ResultSet RSCookiesTable = null;
         ResultSet RSSignInDataTable = null;
+        ResultSet RSPersonnelDataTable = null;
 
         ResultSetMetaData MDCookiesTable = null;
         ResultSetMetaData MDSignInDataTable = null;
+        ResultSetMetaData MDPersonnelDataTable = null;
 
         Map<String, Integer> UserCookiesColumns = new HashMap<String, Integer>();
         Map<String, Integer> SignInDataColumns = new HashMap<String, Integer>();
+        Map<String, Integer> PersonnelDataColumns = new HashMap<String, Integer>();
+
+        Map<String, String> PersonnelDataColumnsText = new HashMap<String, String>();
 
         PersonnelData(){
         
@@ -43,15 +49,26 @@
                 TruckingConnection = DriverManager.getConnection(URL_CS499TruckingCompany, USERNAME, PASSWORD);
                 GetCookiesTable = TruckingConnection.prepareStatement("SELECT * FROM user_cookies_data");
                 GetSignInDataTable = TruckingConnection.prepareStatement("SELECT * FROM sign_in_data");
+                GetPersonnelDataTable = TruckingConnection.prepareStatement("SELECT * FROM personnel_data");
                 RSCookiesTable = GetCookiesTable.executeQuery();
                 RSSignInDataTable = GetSignInDataTable.executeQuery();
+                RSPersonnelDataTable = GetPersonnelDataTable.executeQuery();
                 MDCookiesTable = RSCookiesTable.getMetaData();
                 MDSignInDataTable = RSSignInDataTable.getMetaData();
+                MDPersonnelDataTable = RSPersonnelDataTable.getMetaData();
                 for(int MetaIndex = 1; MetaIndex <= MDCookiesTable.getColumnCount(); MetaIndex++){
                     UserCookiesColumns.put(MDCookiesTable.getColumnName(MetaIndex), MetaIndex);
                 }
                 for(int MetaIndex = 1; MetaIndex <= MDSignInDataTable.getColumnCount(); MetaIndex++){
                     SignInDataColumns.put(MDSignInDataTable.getColumnName(MetaIndex), MetaIndex);
+                }
+                for(int MetaIndex = 1; MetaIndex <= MDPersonnelDataTable.getColumnCount(); MetaIndex++){
+                    PersonnelDataColumns.put(MDPersonnelDataTable.getColumnName(MetaIndex), MetaIndex);
+                }
+                for(int MetaIndex = 1; MetaIndex <= MDPersonnelDataTable.getColumnCount(); MetaIndex++){
+                    PersonnelDataColumns.put(MDPersonnelDataTable.getColumnName(MetaIndex), MetaIndex);
+                    PersonnelDataColumnsText.put(MDPersonnelDataTable.getColumnName(MetaIndex), 
+                        MDPersonnelDataTable.getColumnName(MetaIndex).toUpperCase().replaceAll("_", " "));
                 }
             }catch(SQLException ex){
                 ex.printStackTrace();
@@ -76,6 +93,15 @@
             }
             return RSSignInDataTable;   
         }
+
+        public ResultSet getPersonnelDataTable(){
+            try{
+                RSPersonnelDataTable = GetPersonnelDataTable.executeQuery();
+            }catch(SQLException ex){
+                ex.printStackTrace();
+            }
+            return RSPersonnelDataTable;   
+        }
 }
 %>
 
@@ -88,6 +114,7 @@
         
         ResultSet CookiesTable = UserAccountInfo.getCookiesTable(); 
         ResultSet SignInDataTable = UserAccountInfo.getSignInDataTable();
+        ResultSet PersonnelDataTable = UserAccountInfo.getPersonnelDataTable();
         Cookie cookies[] = request.getCookies();
 
         if(cookies != null){
@@ -112,13 +139,20 @@
             }
         }
         
-        if(AccessCode.contains("P") == false){
+        if(SignedIn == false){
+            response.sendRedirect("index.jsp");
+        }else if(AccessCode.contains("S") == false){
+            response.sendRedirect("UserSignedIn.jsp");
+        }
+        
+/*        if(AccessCode.contains("P") == false){
             response.sendRedirect("UserSignedIn.jsp");
         }
 
         if(SignedIn == false){
             response.sendRedirect("index.jsp");
         }
+*/
 %>
 <html>
     <head>
@@ -127,5 +161,45 @@
     </head>
     <body>
         <h1>Personnel Data</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("personnel_id")%></th>
+                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("first_name")%></th>
+                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("middle_name")%></th>
+                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("last_name")%></th>
+                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("street_address")%></th>
+                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("city")%></th>
+                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("state")%></th>
+                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("zip")%></th>
+                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("home_phone")%></th>
+                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("cell_phone")%></th>
+                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("pay")%></th>
+                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("years_with_company")%></th>
+                </tr>
+            </thead>
+            <tbody>
+                <%try{
+                    while(PersonnelDataTable.next()){%>
+                        <tr>
+                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%></td>
+                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("first_name"))%></td>
+                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("middle_name"))%></td>
+                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("last_name"))%></td>
+                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("street_address"))%></td>
+                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("city"))%></td>
+                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("state"))%></td>
+                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("zip"))%></td>
+                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("home_phone"))%></td>
+                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("cell_phone"))%></td>
+                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("pay"))%></td>
+                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("years_with_company"))%></td>
+                        </tr> 
+                    <%}%>
+                <%}catch(SQLException ex){
+                    ex.printStackTrace();
+                }%>  
+            </tbody>
+        </table>
     </body>
 </html>
