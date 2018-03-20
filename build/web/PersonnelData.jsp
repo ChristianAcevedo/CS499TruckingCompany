@@ -201,5 +201,11 @@
                 }%>  
             </tbody>
         </table>
+        <form name="PrintMonthlyPayrollReport" action="" method="POST">
+            <tr>
+                <td><input type="submit" value="Print Monthly Payroll Report" name="PrintMonthlyPayrollReport" style="width: 200px;"/></td>
+            </tr>
+        </form>
+            <a href="jasperMonthlyPayrollReport.jsp">Monthly Payroll Report</a>
     </body>
 </html>

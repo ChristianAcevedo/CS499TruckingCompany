@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MonthlyPayroll" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0a302067-cf75-4a28-9a62-e2ff41c274ab">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[YENTNDk5VHJ1Y2tpbmdDb21wYW55YC5wZXJzb25uZWxfZGF0YSAsMTUsMTUsMzY1NDA2ZGUtM2Ex
+YS00YzdmLWEwZTEtMjRlN2M0YjU1NDJiOw==]]>
+	</property>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="PersonnelData" uuid="8ef4b1a6-4eee-4f2c-a45f-f55af1705972">
+		<property name="com.jaspersoft.studio.data.sql.tables">
+			<![CDATA[YENTNDk5VHJ1Y2tpbmdDb21wYW55YC5wZXJzb25uZWxfZGF0YSAsMTUsMTUsMWRkMmQzZjEtMTBk
+MS00MDdjLTk3ODMtNjliMGUzMDEwZjU4Ow==]]>
+		</property>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT *
+FROM `CS499TruckingCompany`.personnel_data]]>
+		</queryString>
+		<field name="first_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="first_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+		</field>
+		<field name="middle_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="middle_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+		</field>
+		<field name="last_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="last_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+		</field>
+		<field name="pay" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="pay"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT *
+FROM `CS499TruckingCompany`.personnel_data]]>
+	</queryString>
+	<field name="personnel_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="personnel_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+	</field>
+	<field name="first_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="first_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+	</field>
+	<field name="middle_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="middle_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+	</field>
+	<field name="last_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="last_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+	</field>
+	<field name="street_address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="street_address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+	</field>
+	<field name="city" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="city"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+	</field>
+	<field name="state" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="state"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+	</field>
+	<field name="zip" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="zip"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+	</field>
+	<field name="home_phone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="home_phone"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+	</field>
+	<field name="cell_phone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cell_phone"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+	</field>
+	<field name="pay" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="pay"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+	</field>
+	<field name="years_with_company" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="years_with_company"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="420" y="10" width="120" height="32" uuid="de7d9480-2f67-470a-a04e-89aac9760553"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="10" width="201" height="32" uuid="98923b9f-ba17-40cd-b39e-22e837097dcc"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Payroll Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<summary>
+		<band height="73">
+			<componentElement>
+				<reportElement x="80" y="30" width="401" height="30" uuid="46e104a9-16ab-40bc-bba3-4f24e88e6166">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="PersonnelData" uuid="8f5b1bf9-3321-48ae-b72c-1c9920d25709">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="100" uuid="4fea0112-6a77-480e-9eb3-41f815c81b00">
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="157e3c99-4510-4722-a641-fe6bc6cdef61"/>
+								<textFieldExpression><![CDATA[$F{first_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="6ff2f7ee-e60e-40e0-9ef5-f548418d2068">
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="3c743594-78e4-44da-b1c8-f09249b64ced"/>
+								<textFieldExpression><![CDATA[$F{middle_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="ef4b3ef8-76c2-4e83-a17a-fc0f8143f53e">
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="4e0d1cde-e770-420f-9f99-39430ea2d34b"/>
+								<textFieldExpression><![CDATA[$F{last_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="ffa273dd-9812-47d3-ae2e-df3ed4edc68d">
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="af3b6a55-890b-4c1f-9892-c67fd1039a67"/>
+								<textFieldExpression><![CDATA[$F{pay}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement x="80" y="10" width="100" height="20" uuid="d6ee2647-656d-48d4-8228-bfdb868bd140"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[First Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="10" width="101" height="18" uuid="8e10ca88-280b-4486-ba47-d638bd81d7d2"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Middle Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="10" width="100" height="18" uuid="4e4b505c-2a6e-416f-b529-29a7e8b772b6"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Last Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="381" y="11" width="101" height="18" uuid="28b53e49-f1e2-4bf9-a650-b3164ce41375"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Compensation]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
