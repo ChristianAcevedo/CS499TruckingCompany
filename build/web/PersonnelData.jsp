@@ -111,6 +111,7 @@
         String UserID = "";
         String AccessCode = "";
         PersonnelData UserAccountInfo = new PersonnelData();
+        Map<String, String> NewPersonnelDataInput = new HashMap<String, String>();
         
         ResultSet CookiesTable = UserAccountInfo.getCookiesTable(); 
         ResultSet SignInDataTable = UserAccountInfo.getSignInDataTable();
@@ -141,18 +142,86 @@
         
         if(SignedIn == false){
             response.sendRedirect("index.jsp");
-        }else if(AccessCode.contains("S") == false){
+        }else if(AccessCode.contains("P") == false){
             response.sendRedirect("UserSignedIn.jsp");
         }
         
-/*        if(AccessCode.contains("P") == false){
-            response.sendRedirect("UserSignedIn.jsp");
-        }
 
-        if(SignedIn == false){
-            response.sendRedirect("index.jsp");
+        
+        
+        
+        
+        
+        boolean GoodInput = true;
+        for (String key : UserAccountInfo.PersonnelDataColumnsText.keySet()) {
+            if(request.getParameter(UserAccountInfo.PersonnelDataColumnsText.get(key) + " INPUT") == null ||
+                    request.getParameter(UserAccountInfo.PersonnelDataColumnsText.get(key) + " INPUT") == ""){
+                if(key.equals("personnel_id") == false){
+                    GoodInput = false;
+                    break;
+                }                
+            }else{
+                //if(key.equals())
+                NewPersonnelDataInput.put(key,request.getParameter(UserAccountInfo.PersonnelDataColumnsText.get(key) + " INPUT"));
+            }
         }
-*/
+        int test = 0;
+        String AddPersonnelRecord = "INSERT INTO personnel_data (";
+        if(GoodInput == true){
+            for(String key : UserAccountInfo.PersonnelDataColumnsText.keySet()){
+                if(key.equals("personnel_id") == false){
+                    AddPersonnelRecord = AddPersonnelRecord + key + ",";
+                }
+            }
+            AddPersonnelRecord = AddPersonnelRecord.substring(0, AddPersonnelRecord.length() - 1) + ") VALUES (";
+            for(String key : UserAccountInfo.PersonnelDataColumnsText.keySet()){
+                if(key.equals("personnel_id") == false){
+                    AddPersonnelRecord = AddPersonnelRecord + "'" + NewPersonnelDataInput.get(key) + "',";
+                }
+            }
+            AddPersonnelRecord = AddPersonnelRecord.substring(0, AddPersonnelRecord.length() - 1) + ")";
+            PreparedStatement AddPersonnelRecordStatement = 
+                    UserAccountInfo.TruckingConnection.prepareStatement(AddPersonnelRecord);
+            test = AddPersonnelRecordStatement.executeUpdate();
+            PersonnelDataTable = UserAccountInfo.getPersonnelDataTable();
+        }
+        
+        if(request.getParameter("RefreshUpdate") != null){
+            if(request.getParameter("RefreshUpdate").equals("Update")){
+                String RowID = "0";
+                String UpdateStatement = "";
+                String CurrentParameter = "";
+                boolean MakeChange = false;
+                while(PersonnelDataTable.next()){
+                    UpdateStatement = "UPDATE personnel_data SET";
+                    MakeChange = false;
+                    RowID = PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"));
+                    for(String key : UserAccountInfo.PersonnelDataColumnsText.keySet()){
+                        if(request.getParameter(RowID + " " + UserAccountInfo.PersonnelDataColumnsText.get(key) + " UPDATE") != null){
+                            CurrentParameter = request.getParameter(RowID + " " + UserAccountInfo.PersonnelDataColumnsText.get(key) + " UPDATE");
+                            if(CurrentParameter.equals("") == false && 
+                                CurrentParameter.equals(PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get(key))) == false){
+                                MakeChange = true;
+                                UpdateStatement = UpdateStatement + " " + key + "='" + CurrentParameter + "',";
+                            }
+                        }
+                    }
+                    if(MakeChange == true){
+                        UpdateStatement = UpdateStatement.substring(0, UpdateStatement.length() - 1) + " WHERE personnel_id = '" + RowID + "'";
+                        PreparedStatement UpdateDatabase = UserAccountInfo.TruckingConnection.prepareStatement(UpdateStatement);
+                        UpdateDatabase.executeUpdate();
+                    }
+                }
+                PersonnelDataTable = UserAccountInfo.getPersonnelDataTable();
+            }
+        }
+        
+        
+        
+        
+        
+
+        int PixelMultiplier = 8;
 %>
 <html>
     <head>
@@ -161,51 +230,115 @@
     </head>
     <body>
         <h1>Personnel Data</h1>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("personnel_id")%></th>
-                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("first_name")%></th>
-                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("middle_name")%></th>
-                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("last_name")%></th>
-                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("street_address")%></th>
-                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("city")%></th>
-                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("state")%></th>
-                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("zip")%></th>
-                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("home_phone")%></th>
-                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("cell_phone")%></th>
-                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("pay")%></th>
-                    <th><%=UserAccountInfo.PersonnelDataColumnsText.get("years_with_company")%></th>
-                </tr>
-            </thead>
-            <tbody>
-                <%try{
-                    while(PersonnelDataTable.next()){%>
-                        <tr>
-                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%></td>
-                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("first_name"))%></td>
-                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("middle_name"))%></td>
-                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("last_name"))%></td>
-                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("street_address"))%></td>
-                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("city"))%></td>
-                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("state"))%></td>
-                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("zip"))%></td>
-                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("home_phone"))%></td>
-                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("cell_phone"))%></td>
-                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("pay"))%></td>
-                            <td><%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("years_with_company"))%></td>
-                        </tr> 
-                    <%}%>
-                <%}catch(SQLException ex){
-                    ex.printStackTrace();
-                }%>  
-            </tbody>
-        </table>
+        <form name="GoToMainMenu" action="UserSignedIn.jsp" method="POST">
+            <input type="submit" value="Go to Main Menu" name="Main Menu" />
+        </form>
+        <form name="PersonnelDataGetter" action="PersonnelData.jsp" method="POST">
+            <table border="0">
+                <tbody>
+                    <tr>
+                        <td>
+                            <select name="RefreshUpdate">
+                                <option value="Refresh">Refresh Page</option>
+                                <option value="Update">Update Page</option>
+                            </select>
+                        </td>
+                        <td><input type="submit" value="View/Update Data" onclick="myFunction()"/></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th><%=UserAccountInfo.PersonnelDataColumnsText.get("personnel_id")%></th>
+                        <th><%=UserAccountInfo.PersonnelDataColumnsText.get("first_name")%></th>
+                        <th><%=UserAccountInfo.PersonnelDataColumnsText.get("middle_name")%></th>
+                        <th><%=UserAccountInfo.PersonnelDataColumnsText.get("last_name")%></th>
+                        <th><%=UserAccountInfo.PersonnelDataColumnsText.get("street_address")%></th>
+                        <th><%=UserAccountInfo.PersonnelDataColumnsText.get("city")%></th>
+                        <th><%=UserAccountInfo.PersonnelDataColumnsText.get("state")%></th>
+                        <th><%=UserAccountInfo.PersonnelDataColumnsText.get("zip")%></th>
+                        <th><%=UserAccountInfo.PersonnelDataColumnsText.get("home_phone")%></th>
+                        <th><%=UserAccountInfo.PersonnelDataColumnsText.get("cell_phone")%></th>
+                        <th><%=UserAccountInfo.PersonnelDataColumnsText.get("pay")%></th>
+                        <th><%=UserAccountInfo.PersonnelDataColumnsText.get("hours_worked")%></th>
+                        <th><%=UserAccountInfo.PersonnelDataColumnsText.get("years_with_company")%></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%try{
+                        while(PersonnelDataTable.next()){%>
+                            <tr>
+                                <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("personnel_id")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%>"/></td>
+                                <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("first_name"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("first_name")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("first_name"))%>"/></td>
+                                <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("middle_name"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("middle_name")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("middle_name"))%>"/></td>
+                                <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("last_name"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("last_name")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("last_name"))%>"/></td>
+                                <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("street_address"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("street_address")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("street_address"))%>"/></td>
+                                <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("city"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("city")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("city"))%>"/></td>
+                                <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("state"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("state")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("state"))%>"/></td>
+                                <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("zip"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("zip")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("zip"))%>"/></td>
+                                <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("home_phone"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("home_phone")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("home_phone"))%>"/></td>
+                                <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("cell_phone"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("cell_phone")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("cell_phone"))%>"/></td>
+                                <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("pay"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("pay")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("pay"))%>"/></td>
+                                <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("hours_worked"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("hours_worked")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("hours_worked"))%>"/></td>
+                                <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("years_with_company"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("years_with_company")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("years_with_company"))%>"/></td>
+                            </tr> 
+                        <%}%>
+                    <%}catch(SQLException ex){
+                        ex.printStackTrace();
+                    }%>
+                                        <tr>
+                            <form action="PersonnelData.jsp" method="POST">
+                                <%for(int MetaIndex = 1; MetaIndex <= PersonnelDataTable.getMetaData().getColumnCount(); MetaIndex++){    
+                                    int size = UserAccountInfo.MDPersonnelDataTable.getPrecision(MetaIndex) * PixelMultiplier; %>
+                                    <td><input style="width: <%=size%>px;" type="text" name="<%=UserAccountInfo.PersonnelDataColumnsText.get(UserAccountInfo.MDPersonnelDataTable.getColumnName(MetaIndex))%> INPUT" value="" /></td>
+                                <%}%>
+                            </form>
+                        </tr>
+                </tbody>
+            </table>
+        </form>
+        <form action="PersonnelData.jsp" method="POST">
+            <input type="submit" value="Add Data" name="AddDataBtn" />
+        </form>
         <form name="PrintMonthlyPayrollReport" action="" method="POST">
             <tr>
                 <td><input type="submit" value="Print Monthly Payroll Report" name="PrintMonthlyPayrollReport" style="width: 200px;"/></td>
             </tr>
         </form>
+                <form name="DeleteUpdate" action="PersonnelData.jsp" method="POST">
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </form>
             <a href="jasperMonthlyPayrollReport.jsp">Monthly Payroll Report</a>
     </body>
 </html>
+
+<script>
+    function myFunction() {
+        var txt = "Refreshing Personnel Data Page";
+        if (document.getElementsByName("RefreshUpdate")[0].value === "Update"){
+            txt = "Updating database.  This will take a few moments."
+        }
+        alert(txt);
+    }   
+</script>

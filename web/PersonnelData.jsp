@@ -142,7 +142,7 @@
         
         if(SignedIn == false){
             response.sendRedirect("index.jsp");
-        }else if(AccessCode.contains("S") == false){
+        }else if(AccessCode.contains("P") == false){
             response.sendRedirect("UserSignedIn.jsp");
         }
         
@@ -261,6 +261,7 @@
                         <th><%=UserAccountInfo.PersonnelDataColumnsText.get("home_phone")%></th>
                         <th><%=UserAccountInfo.PersonnelDataColumnsText.get("cell_phone")%></th>
                         <th><%=UserAccountInfo.PersonnelDataColumnsText.get("pay")%></th>
+                        <th><%=UserAccountInfo.PersonnelDataColumnsText.get("hours_worked")%></th>
                         <th><%=UserAccountInfo.PersonnelDataColumnsText.get("years_with_company")%></th>
                     </tr>
                 </thead>
@@ -279,6 +280,7 @@
                                 <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("home_phone"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("home_phone")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("home_phone"))%>"/></td>
                                 <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("cell_phone"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("cell_phone")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("cell_phone"))%>"/></td>
                                 <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("pay"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("pay")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("pay"))%>"/></td>
+                                <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("hours_worked"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("hours_worked")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("hours_worked"))%>"/></td>
                                 <td><input style="width: <%=UserAccountInfo.MDPersonnelDataTable.getPrecision(UserAccountInfo.PersonnelDataColumns.get("years_with_company"))*PixelMultiplier%>px;" type="text" name="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("personnel_id"))%> <%=UserAccountInfo.MDPersonnelDataTable.getColumnName(UserAccountInfo.PersonnelDataColumns.get("years_with_company")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=PersonnelDataTable.getString(UserAccountInfo.PersonnelDataColumns.get("years_with_company"))%>"/></td>
                             </tr> 
                         <%}%>
