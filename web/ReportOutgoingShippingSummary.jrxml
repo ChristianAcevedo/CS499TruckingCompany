@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MonthlyPayroll" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0a302067-cf75-4a28-9a62-e2ff41c274ab">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="ShippingData" uuid="0fd0135e-3793-45fb-942b-d5cd862bdb07">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<queryString>
+			<![CDATA[SELECT shipping_data.shipment_id,
+	shipping_data.company,
+	shipping_data.street_address,
+	shipping_data.city,
+	shipping_data.state,
+	shipping_data.zip,
+	shipping_data.vehicle_id,
+	shipping_data.date_time,
+	shipping_data.driver,
+	shipping_data.shipment_manifest,
+	shipment_manafest_data.total_cost,
+	shipment_manafest_data.shipment_manifest_id
+FROM `CS499TruckingCompany`.shipping_data
+INNER JOIN shipment_manafest_data ON shipping_data.shipment_manifest=shipment_manafest_data.shipment_manifest_id
+WHERE shipping_data.incoming_outgoing = "0"]]>
+		</queryString>
+		<field name="shipment_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="shipment_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+		</field>
+		<field name="company" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="company"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+		</field>
+		<field name="street_address" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="street_address"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+		</field>
+		<field name="city" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="city"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+		</field>
+		<field name="state" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="state"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+		</field>
+		<field name="zip" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="zip"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+		</field>
+		<field name="vehicle_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vehicle_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+		</field>
+		<field name="date_time" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="date_time"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+		</field>
+		<field name="driver" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="driver"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+		</field>
+		<field name="shipment_manifest" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="shipment_manifest"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+		</field>
+		<field name="total_cost" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="total_cost"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="shipment_manafest_data"/>
+		</field>
+		<field name="shipment_manifest_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="shipment_manifest_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="shipment_manafest_data"/>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT `CS499TruckingCompany`.shipping_data.shipment_id,
+	`CS499TruckingCompany`.shipping_data.company,
+	`CS499TruckingCompany`.shipping_data.street_address,
+	`CS499TruckingCompany`.shipping_data.city,
+	`CS499TruckingCompany`.shipping_data.state,
+	`CS499TruckingCompany`.shipping_data.zip,
+	`CS499TruckingCompany`.shipping_data.vehicle_id,
+	`CS499TruckingCompany`.shipping_data.date_time,
+	`CS499TruckingCompany`.shipping_data.driver,
+	`CS499TruckingCompany`.shipping_data.shipment_manifest,
+	shipment_manafest_data.total_cost,
+	shipment_manafest_data.shipment_manifest_id
+FROM `CS499TruckingCompany`.shipping_data
+	INNER JOIN shipment_manafest_data ON 
+	 `CS499TruckingCompany`.shipping_data.shipment_manifest = shipment_manafest_data.shipment_manifest_id
+WHERE shipping_data.incoming_outgoing = "0"]]>
+	</queryString>
+	<field name="shipment_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="shipment_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="company" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="company"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="street_address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="street_address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="city" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="city"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="state" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="state"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="zip" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="zip"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="vehicle_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="vehicle_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="date_time" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="date_time"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="driver" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="driver"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="shipment_manifest" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="shipment_manifest"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="total_cost" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="total_cost"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipment_manafest_data"/>
+	</field>
+	<field name="shipment_manifest_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="shipment_manifest_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipment_manafest_data"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="420" y="10" width="120" height="32" uuid="de7d9480-2f67-470a-a04e-89aac9760553"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="160" y="10" width="240" height="32" uuid="98923b9f-ba17-40cd-b39e-22e837097dcc"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Outgoing Shipment Summary]]></text>
+			</staticText>
+		</band>
+	</title>
+	<summary>
+		<band height="73">
+			<componentElement>
+				<reportElement x="0" y="30" width="570" height="30" uuid="46e104a9-16ab-40bc-bba3-4f24e88e6166">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.table.name" value=""/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="ShippingData" uuid="8f5b1bf9-3321-48ae-b72c-1c9920d25709">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="60" uuid="4fea0112-6a77-480e-9eb3-41f815c81b00">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="4299d149-c1fd-4017-8535-56dba35e8ba6"/>
+								<textFieldExpression><![CDATA[$F{company}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="6ff2f7ee-e60e-40e0-9ef5-f548418d2068">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="2d97b592-a5b3-43d6-ac5e-18b1b2f01a54"/>
+								<textFieldExpression><![CDATA[$F{vehicle_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="ef4b3ef8-76c2-4e83-a17a-fc0f8143f53e">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="30" uuid="04b1b969-ce8d-41ed-974d-0addb9f59039"/>
+								<textFieldExpression><![CDATA[$F{driver}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="ffa273dd-9812-47d3-ae2e-df3ed4edc68d">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="30" uuid="c1d1a8f2-93ef-4261-9fdb-ca4fc45f26fe"/>
+								<textFieldExpression><![CDATA[$F{date_time}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="47a60039-e58f-4e4c-a34d-2e2c40fc4e39">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="0e234ade-fd80-4e15-b4e4-c03970b3ee6e"/>
+								<textFieldExpression><![CDATA[$F{date_time}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="b7ab0bec-7b87-4cde-aa1a-d330aa265568">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="40b057ac-56e2-4e15-bf2c-7450c8612eaf"/>
+								<textFieldExpression><![CDATA[$F{street_address}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="8f1f346f-8b8e-4a9a-968b-bf7ff0b28c36">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="50" height="30" uuid="468d929c-1aa3-424b-bd1c-ffa44f6a42b1"/>
+								<textFieldExpression><![CDATA[$F{city}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="30" uuid="a178a224-4778-4f8e-82a1-6f6267aa1b91">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column8"/>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="30" height="30" uuid="46210040-97f8-42b6-b339-d95f117cd940"/>
+								<textFieldExpression><![CDATA[$F{state}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="d8fbda29-3d9d-43c6-b712-207a0d5ed968">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column9"/>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="50" height="30" uuid="6401d6be-2f86-4475-b8c0-dfceb6e16304"/>
+								<textFieldExpression><![CDATA[$F{zip}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="05beb9f0-ab37-475f-b08f-d27cd9b9617e">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column10"/>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="627fb15f-de8f-4169-8302-2f7582ec7190"/>
+								<textFieldExpression><![CDATA[$F{total_cost}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement x="0" y="11" width="60" height="18" uuid="d6ee2647-656d-48d4-8228-bfdb868bd140"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Company]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="11" width="60" height="19" uuid="8e10ca88-280b-4486-ba47-d638bd81d7d2"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Vehicle ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="11" width="70" height="18" uuid="4e4b505c-2a6e-416f-b529-29a7e8b772b6"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Driver ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="11" width="60" height="18" uuid="28b53e49-f1e2-4bf9-a650-b3164ce41375"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Arrival Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="10" width="70" height="19" uuid="e369b25a-602a-4f85-ae67-2b47f5378ae7"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Departure Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="11" width="60" height="18" uuid="375c9307-e3b1-4701-832b-11bc2abb9839"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Street]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="11" width="50" height="18" uuid="0855a440-8bd2-4b91-ad0b-8892ef5b5088"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[City]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="11" width="30" height="18" uuid="05a1dea6-0953-451f-b075-6d01ac40098d"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[State]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="11" width="50" height="18" uuid="08677cf6-08e7-43f8-bfb9-1e06a38ac610"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Zip]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="510" y="11" width="60" height="18" uuid="2c8c52bb-df9a-41ad-9552-8469f5929b69"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Total Cost]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

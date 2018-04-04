@@ -301,7 +301,7 @@
         <form action="PersonnelData.jsp" method="POST">
             <input type="submit" value="Add Data" name="AddDataBtn" />
         </form>
-        <form name="PrintMonthlyPayrollReport" action="" method="POST">
+        <form name="PrintMonthlyPayrollReport" action="jasperMonthlyPayrollReport.jsp" method="POST">
             <tr>
                 <td><input type="submit" value="Print Monthly Payroll Report" name="PrintMonthlyPayrollReport" style="width: 200px;"/></td>
             </tr>

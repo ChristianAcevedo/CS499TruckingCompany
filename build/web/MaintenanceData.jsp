@@ -241,10 +241,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Maintenance Data</title>
+        <title>Maintenance Data For Vehicle ID: <%=maintenance_id_param%> </title>
     </head>
     <body>
-        <h1>Maintenance Data</h1>
+        <h1>Maintenance Data For Vehicle ID: <%=maintenance_id_param%> </h1>
         <form name="GoToMainMenu" action="UserSignedIn.jsp" method="POST">
             <input type="submit" value="Go to Main Menu" name="Main Menu" />
         </form>

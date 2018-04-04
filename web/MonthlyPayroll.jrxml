@@ -2,10 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MonthlyPayroll" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0a302067-cf75-4a28-9a62-e2ff41c274ab">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
-	<property name="com.jaspersoft.studio.data.sql.tables">
-		<![CDATA[YENTNDk5VHJ1Y2tpbmdDb21wYW55YC5wZXJzb25uZWxfZGF0YSAsMTUsMTUsMzY1NDA2ZGUtM2Ex
-YS00YzdmLWEwZTEtMjRlN2M0YjU1NDJiOw==]]>
-	</property>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
@@ -34,15 +31,16 @@ YS00YzdmLWEwZTEtMjRlN2M0YjU1NDJiOw==]]>
 		</box>
 	</style>
 	<subDataset name="PersonnelData" uuid="8ef4b1a6-4eee-4f2c-a45f-f55af1705972">
-		<property name="com.jaspersoft.studio.data.sql.tables">
-			<![CDATA[YENTNDk5VHJ1Y2tpbmdDb21wYW55YC5wZXJzb25uZWxfZGF0YSAsMTUsMTUsMWRkMmQzZjEtMTBk
-MS00MDdjLTk3ODMtNjliMGUzMDEwZjU4Ow==]]>
-		</property>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
 		<queryString language="SQL">
 			<![CDATA[SELECT *
 FROM `CS499TruckingCompany`.personnel_data]]>
 		</queryString>
+		<field name="personnel_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="personnel_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+		</field>
 		<field name="first_name" class="java.lang.String">
 			<property name="com.jaspersoft.studio.field.label" value="first_name"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
@@ -55,8 +53,40 @@ FROM `CS499TruckingCompany`.personnel_data]]>
 			<property name="com.jaspersoft.studio.field.label" value="last_name"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
 		</field>
+		<field name="street_address" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="street_address"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+		</field>
+		<field name="city" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="city"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+		</field>
+		<field name="state" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="state"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+		</field>
+		<field name="zip" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="zip"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+		</field>
+		<field name="home_phone" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="home_phone"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+		</field>
+		<field name="cell_phone" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="cell_phone"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+		</field>
 		<field name="pay" class="java.math.BigDecimal">
 			<property name="com.jaspersoft.studio.field.label" value="pay"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+		</field>
+		<field name="hours_worked" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="hours_worked"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+		</field>
+		<field name="years_with_company" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="years_with_company"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
 		</field>
 	</subDataset>
@@ -106,6 +136,10 @@ FROM `CS499TruckingCompany`.personnel_data]]>
 	</field>
 	<field name="pay" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="pay"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
+	</field>
+	<field name="hours_worked" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="hours_worked"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="personnel_data"/>
 	</field>
 	<field name="years_with_company" class="java.lang.Integer">
@@ -171,7 +205,7 @@ FROM `CS499TruckingCompany`.personnel_data]]>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
 								<reportElement x="0" y="0" width="100" height="30" uuid="af3b6a55-890b-4c1f-9892-c67fd1039a67"/>
-								<textFieldExpression><![CDATA[$F{pay}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[new Double( $F{pay}.doubleValue() * $F{hours_worked}.doubleValue() )]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
