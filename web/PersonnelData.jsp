@@ -156,10 +156,15 @@
         for (String key : UserAccountInfo.PersonnelDataColumnsText.keySet()) {
             if(request.getParameter(UserAccountInfo.PersonnelDataColumnsText.get(key) + " INPUT") == null ||
                     request.getParameter(UserAccountInfo.PersonnelDataColumnsText.get(key) + " INPUT") == ""){
+/*
                 if(key.equals("personnel_id") == false){
                     GoodInput = false;
                     break;
                 }                
+*/
+                    GoodInput = false;
+                    break;
+
             }else{
                 //if(key.equals())
                 NewPersonnelDataInput.put(key,request.getParameter(UserAccountInfo.PersonnelDataColumnsText.get(key) + " INPUT"));
@@ -169,15 +174,23 @@
         String AddPersonnelRecord = "INSERT INTO personnel_data (";
         if(GoodInput == true){
             for(String key : UserAccountInfo.PersonnelDataColumnsText.keySet()){
+/*
                 if(key.equals("personnel_id") == false){
                     AddPersonnelRecord = AddPersonnelRecord + key + ",";
                 }
+*/                  
+                AddPersonnelRecord = AddPersonnelRecord + key + ",";
+
             }
             AddPersonnelRecord = AddPersonnelRecord.substring(0, AddPersonnelRecord.length() - 1) + ") VALUES (";
             for(String key : UserAccountInfo.PersonnelDataColumnsText.keySet()){
+/*
                 if(key.equals("personnel_id") == false){
                     AddPersonnelRecord = AddPersonnelRecord + "'" + NewPersonnelDataInput.get(key) + "',";
                 }
+*/
+                AddPersonnelRecord = AddPersonnelRecord + "'" + NewPersonnelDataInput.get(key) + "',";
+
             }
             AddPersonnelRecord = AddPersonnelRecord.substring(0, AddPersonnelRecord.length() - 1) + ")";
             PreparedStatement AddPersonnelRecordStatement = 
@@ -297,16 +310,9 @@
                         </tr>
                 </tbody>
             </table>
+                            <input type="submit" value="Add Data" name="AddDataBtn" />
         </form>
-        <form action="PersonnelData.jsp" method="POST">
-            <input type="submit" value="Add Data" name="AddDataBtn" />
-        </form>
-        <form name="PrintMonthlyPayrollReport" action="jasperMonthlyPayrollReport.jsp" method="POST">
-            <tr>
-                <td><input type="submit" value="Print Monthly Payroll Report" name="PrintMonthlyPayrollReport" style="width: 200px;"/></td>
-            </tr>
-        </form>
-                <form name="DeleteUpdate" action="PersonnelData.jsp" method="POST">
+             <form name="DeleteUpdate" action="PersonnelData.jsp" method="POST">
             <table border="0">
                 <thead>
                     <tr>

@@ -295,7 +295,8 @@
                     </tr>
                 </tbody>
             </table>
-        </form>   
+        </form>
+        <a href="jasperSingleVehicleReport.jsp?vehicle_id_param=<%=maintenance_id_param%>">Vehicle Maintenance Report</a>
         <form name="DeleteUpdate" action="MaintenanceData.jsp" method="POST">
             <table border="0">
                 <thead>

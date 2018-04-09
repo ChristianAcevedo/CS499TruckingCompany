@@ -311,7 +311,8 @@
                 </tbody>
             </table>
 
-        </form>        
+        </form>       
+        <a href="jasperMonthlyMaintenanceReport.jsp">Monthly Maintenance Report for All Vehicles</a>
     </body>
 </html>
 

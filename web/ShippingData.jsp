@@ -373,12 +373,8 @@
                                     <td>
                                         <input style="width: <%=UserAccountInfo.MDShippingDataTable.getPrecision(UserAccountInfo.ShippingDataColumns.get("driver"))*PixelMultiplier%>px;" type="text" name="<%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("shipment_id"))%> <%=UserAccountInfo.MDShippingDataTable.getColumnName(UserAccountInfo.ShippingDataColumns.get("driver")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("driver"))%>"/>
                                     </td>
-                                    <td>
-                                        <input style="width: <%=UserAccountInfo.MDShippingDataTable.getPrecision(UserAccountInfo.ShippingDataColumns.get("purchase_order"))*PixelMultiplier%>px;" type="text" name="<%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("shipment_id"))%> <%=UserAccountInfo.MDShippingDataTable.getColumnName(UserAccountInfo.ShippingDataColumns.get("purchase_order")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("purchase_order"))%>"/>
-                                    </td>
-                                    <td>
-                                        <input style="width: <%=UserAccountInfo.MDShippingDataTable.getPrecision(UserAccountInfo.ShippingDataColumns.get("shipment_manifest"))*PixelMultiplier%>px;" type="text" name="<%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("shipment_id"))%> <%=UserAccountInfo.MDShippingDataTable.getColumnName(UserAccountInfo.ShippingDataColumns.get("shipment_manifest")).toUpperCase().replaceAll("_", " ")%> UPDATE" value="<%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("shipment_manifest"))%>"/>
-                                    </td>
+                                    <td><a href="PurchaseOrder.jsp?shipping_id_param=<%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("shipment_id"))%>">Purchase Order</a></td>
+                                    <td><a href="ShippingManifest.jsp?maintenance_id_param=<%=ShippingDataTable.getString(UserAccountInfo.ShippingDataColumns.get("shipment_id"))%>">Shipment Manifest</a></td>
                                 </tr>
                             <%}
                         }%>
@@ -436,7 +432,9 @@
                 </tbody>
             </table>
 
-        </form>        
+        </form>
+        <a href="jasperIncomingShippingSummary.jsp">Incoming Shipping Summary</a>
+        <a href="jasperOutgoingShippingSummary.jsp">Outgoing Shipping Summary</a>
     </body>
 </html>
 

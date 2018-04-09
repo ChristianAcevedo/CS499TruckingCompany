@@ -1,0 +1,1402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="VehicleMaintenanceReport" pageWidth="612" pageHeight="1500" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="0a302067-cf75-4a28-9a62-e2ff41c274ab">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 5_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 5_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 6_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 6_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 6_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 7_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 7_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 7_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 8_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 8_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 8_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 9_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 9_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 9_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 10_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 10_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 10_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="InspectionsDataset" uuid="3885d703-5acd-4d02-9649-da770dc7f0de">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
+		<parameter name="VehicleID" class="java.lang.String">
+			<defaultValueExpression><![CDATA[-1]]></defaultValueExpression>
+		</parameter>
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM  `CS499TruckingCompany`.vehicle_inspections]]>
+		</queryString>
+		<field name="inspection_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="inspection_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="vehicle_inspections"/>
+		</field>
+		<field name="vehicle_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vehicle_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="vehicle_inspections"/>
+		</field>
+		<field name="date" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="date"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="vehicle_inspections"/>
+		</field>
+	</subDataset>
+	<subDataset name="OilChangeDataset" uuid="9981419c-bbe2-49fe-a75b-332a006ea033">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
+		<parameter name="VehicleID" class="java.lang.String">
+			<defaultValueExpression><![CDATA[-1]]></defaultValueExpression>
+		</parameter>
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM  `CS499TruckingCompany`.oil_changes]]>
+		</queryString>
+		<field name="oil_change_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="oil_change_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="oil_changes"/>
+		</field>
+		<field name="vehicle_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vehicle_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="oil_changes"/>
+		</field>
+		<field name="date" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="date"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="oil_changes"/>
+		</field>
+	</subDataset>
+	<subDataset name="FilterChangeDataset" uuid="5dd35fff-11e7-42ad-bab1-cc82c3d3ca05">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
+		<parameter name="VehicleID" class="java.lang.String">
+			<defaultValueExpression><![CDATA[-1]]></defaultValueExpression>
+		</parameter>
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM  `CS499TruckingCompany`.filter_changes]]>
+		</queryString>
+		<field name="filter_change_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="filter_change_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="filter_changes"/>
+		</field>
+		<field name="vehicle_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vehicle_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="filter_changes"/>
+		</field>
+		<field name="filter_type" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="filter_type"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="filter_changes"/>
+		</field>
+		<field name="date" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="date"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="filter_changes"/>
+		</field>
+	</subDataset>
+	<subDataset name="TireRotationDataset" uuid="fb1b4772-1fca-4cfc-b09e-29df6cc14227">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<parameter name="VehicleID" class="java.lang.String">
+			<defaultValueExpression><![CDATA[-1]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[SELECT * FROM `CS499TruckingCompany`.tire_rotation]]>
+		</queryString>
+		<field name="tire_rotation_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="tire_rotation_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tire_rotation"/>
+		</field>
+		<field name="vehicle_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vehicle_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tire_rotation"/>
+		</field>
+		<field name="date" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="date"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tire_rotation"/>
+		</field>
+	</subDataset>
+	<subDataset name="TireChangeDataset" uuid="0e3ce57e-d3db-4fab-88ab-655321253885">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
+		<parameter name="VehicleID" class="java.lang.String">
+			<defaultValueExpression><![CDATA[-1]]></defaultValueExpression>
+		</parameter>
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM  `CS499TruckingCompany`.tire_changes]]>
+		</queryString>
+		<field name="tire_changes_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="tire_changes_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tire_changes"/>
+		</field>
+		<field name="vehicle_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vehicle_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tire_changes"/>
+		</field>
+		<field name="date" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="date"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tire_changes"/>
+		</field>
+	</subDataset>
+	<subDataset name="FluidCheckDataset" uuid="970016d3-98b2-44a0-af23-9e8706751f7e">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
+		<parameter name="VehicleID" class="java.lang.String">
+			<defaultValueExpression><![CDATA[-1]]></defaultValueExpression>
+		</parameter>
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM  `CS499TruckingCompany`.fluid_checks]]>
+		</queryString>
+		<field name="fluid_checks_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="fluid_checks_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="fluid_checks"/>
+		</field>
+		<field name="vehicle_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vehicle_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="fluid_checks"/>
+		</field>
+		<field name="fluid_type" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="fluid_type"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="fluid_checks"/>
+		</field>
+		<field name="date" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="date"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="fluid_checks"/>
+		</field>
+	</subDataset>
+	<subDataset name="SparkPlugsDataset" uuid="79f6e81e-f092-48da-b0ec-c5cae058c5d8">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
+		<parameter name="VehicleID" class="java.lang.String">
+			<defaultValueExpression><![CDATA[-1]]></defaultValueExpression>
+		</parameter>
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM  `CS499TruckingCompany`.spark_plugs]]>
+		</queryString>
+		<field name="spark_plugs_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="spark_plugs_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="spark_plugs"/>
+		</field>
+		<field name="vehicle_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vehicle_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="spark_plugs"/>
+		</field>
+		<field name="date" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="date"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="spark_plugs"/>
+		</field>
+	</subDataset>
+	<subDataset name="TimingBeltDataset" uuid="8061a5de-5ba4-4677-93f1-ab78761cff2f">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
+		<parameter name="VehicleID" class="java.lang.String">
+			<defaultValueExpression><![CDATA[-1]]></defaultValueExpression>
+		</parameter>
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM  `CS499TruckingCompany`.timing_belt]]>
+		</queryString>
+		<field name="timing_belt_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="timing_belt_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="timing_belt"/>
+		</field>
+		<field name="vehicle_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vehicle_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="timing_belt"/>
+		</field>
+		<field name="date" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="date"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="timing_belt"/>
+		</field>
+	</subDataset>
+	<subDataset name="InteriorCleaning" uuid="a0105d66-7ebe-45da-b7bd-5a2bb5d3f152">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
+		<parameter name="VehicleID" class="java.lang.String">
+			<defaultValueExpression><![CDATA[-1]]></defaultValueExpression>
+		</parameter>
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM  `CS499TruckingCompany`.cleaning_interior]]>
+		</queryString>
+		<field name="cleaning_interior_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="cleaning_interior_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="cleaning_interior"/>
+		</field>
+		<field name="vehicle_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vehicle_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="cleaning_interior"/>
+		</field>
+		<field name="date" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="date"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="cleaning_interior"/>
+		</field>
+	</subDataset>
+	<subDataset name="LightsCheckDataset" uuid="7bd8d368-71f0-430b-8733-0bfa6249a8b7">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
+		<parameter name="VehicleID" class="java.lang.String">
+			<defaultValueExpression><![CDATA[-1]]></defaultValueExpression>
+		</parameter>
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM  `CS499TruckingCompany`.lights_check]]>
+		</queryString>
+		<field name="lights_check_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="lights_check_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="lights_check"/>
+		</field>
+		<field name="vehicle_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vehicle_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="lights_check"/>
+		</field>
+		<field name="date" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="date"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="lights_check"/>
+		</field>
+	</subDataset>
+	<subDataset name="RepairRecordDataset" uuid="e1714054-f161-47de-a520-9f39f3522d72">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Test1"/>
+		<parameter name="VehicleID" class="java.lang.String">
+			<defaultValueExpression><![CDATA[-1]]></defaultValueExpression>
+		</parameter>
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM  `CS499TruckingCompany`.repair_data]]>
+		</queryString>
+		<field name="repair_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="repair_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="repair_data"/>
+		</field>
+		<field name="vehicle_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vehicle_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="repair_data"/>
+		</field>
+		<field name="description" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="description"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="repair_data"/>
+		</field>
+		<field name="parts_list" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="parts_list"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="repair_data"/>
+		</field>
+		<field name="date" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="date"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="repair_data"/>
+		</field>
+		<field name="came_from_company_stocks" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="came_from_company_stocks"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="repair_data"/>
+		</field>
+		<field name="ordered_from" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="ordered_from"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="repair_data"/>
+		</field>
+		<field name="price" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="price"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="repair_data"/>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT `CS499TruckingCompany`.shipping_data.shipment_id,
+	`CS499TruckingCompany`.shipping_data.company,
+	`CS499TruckingCompany`.shipping_data.street_address,
+	`CS499TruckingCompany`.shipping_data.city,
+	`CS499TruckingCompany`.shipping_data.state,
+	`CS499TruckingCompany`.shipping_data.zip,
+	`CS499TruckingCompany`.shipping_data.vehicle_id,
+	`CS499TruckingCompany`.shipping_data.date_time,
+	`CS499TruckingCompany`.shipping_data.driver,
+	`CS499TruckingCompany`.shipping_data.shipment_manifest,
+	shipment_manafest_data.total_cost,
+	shipment_manafest_data.shipment_manifest_id
+FROM `CS499TruckingCompany`.shipping_data
+	INNER JOIN shipment_manafest_data ON 
+	 `CS499TruckingCompany`.shipping_data.shipment_manifest = shipment_manafest_data.shipment_manifest_id
+WHERE shipping_data.incoming_outgoing = "1"]]>
+	</queryString>
+	<field name="shipment_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="shipment_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="company" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="company"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="street_address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="street_address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="city" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="city"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="state" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="state"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="zip" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="zip"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="vehicle_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="vehicle_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="date_time" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="date_time"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="driver" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="driver"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="shipment_manifest" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="shipment_manifest"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipping_data"/>
+	</field>
+	<field name="total_cost" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="total_cost"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipment_manafest_data"/>
+	</field>
+	<field name="shipment_manifest_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="shipment_manifest_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="shipment_manafest_data"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="81" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="420" y="10" width="120" height="32" uuid="de7d9480-2f67-470a-a04e-89aac9760553"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="160" y="10" width="240" height="32" uuid="98923b9f-ba17-40cd-b39e-22e837097dcc"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Vehicle Maintenance Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<summary>
+		<band height="1066">
+			<staticText>
+				<reportElement x="0" y="52" width="190" height="18" uuid="05a1dea6-0953-451f-b075-6d01ac40098d"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Inspection ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="52" width="190" height="18" uuid="08677cf6-08e7-43f8-bfb9-1e06a38ac610"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Vehicle ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="52" width="190" height="18" uuid="2c8c52bb-df9a-41ad-9552-8469f5929b69"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="29" width="201" height="21" uuid="eace8fba-ba1e-43c5-baa4-6b93dc52e5e6"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Inspections]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="143" width="190" height="18" uuid="62fc4ed1-eaba-4989-bc32-1390c796e3fb"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Oil Change ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="190" y="143" width="190" height="18" uuid="dd80fd72-8c19-4860-bfa0-5e7e52a703a5"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Vehicle ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="380" y="143" width="190" height="18" uuid="e67893ab-585b-4755-9a2b-ab56ba9a4e5c"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="180" y="120" width="201" height="21" uuid="ae192e0f-dc60-459c-b798-ad2cd5b52569"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Oil Changes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="240" width="140" height="18" uuid="35ae4661-3d5e-492f-a0db-3a5a36aef430"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Filter Change ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="241" width="140" height="18" uuid="72220e7a-6520-46bb-a8f9-21e65042cb3b"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Vehicle ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="430" y="243" width="140" height="18" uuid="aadf63f9-bb63-4a6c-a641-06a2378d18f5"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="180" y="220" width="201" height="21" uuid="ef4e32f2-0d71-476b-b411-8f487d2d549a"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Filter Changes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="330" width="190" height="18" uuid="90fbb559-6454-4eff-9a96-36a02ff92c15"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Tire Rotation ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="190" y="330" width="190" height="18" uuid="ee6ae03a-2b35-4334-8379-4d2b592d99b4"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Vehicle ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="380" y="330" width="190" height="18" uuid="6524032c-c423-4867-8acc-785a2d31d71e"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="180" y="307" width="201" height="21" uuid="441cd72e-3dca-44e8-8f47-aea8e6d14565"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Tire Rotations]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="422" width="190" height="18" uuid="4a6f6c49-a973-4476-a7a6-eda1d93667d4"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Tire Change ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="190" y="422" width="190" height="18" uuid="e987f6db-d6f8-4aa8-aa02-070ff818f53d"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Vehicle ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="380" y="422" width="190" height="18" uuid="ae5f1533-76c1-4bc3-a621-38f6955ede07"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="180" y="399" width="201" height="21" uuid="03a60efa-2d17-49c2-b6b1-b7a337b07a35"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Tire Changes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="510" width="140" height="18" uuid="f8e25d8e-f9f4-474d-832a-c0b6d85e090d"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Fluid Check ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="510" width="140" height="18" uuid="5779acde-5a50-461b-96e9-f29cf0ae5ec8"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Vehicle ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="430" y="513" width="140" height="18" uuid="541fbecd-f733-467e-87d6-151797e40c34"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="180" y="492" width="201" height="21" uuid="137378fa-be4e-4e9b-8f1c-5798b30791e9"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Fluid Checks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="603" width="190" height="18" uuid="14de7cda-fd7c-4b00-9598-0f197913b4c4"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Spark Plug ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="190" y="603" width="190" height="18" uuid="7d472276-9651-411a-9d2a-4ea0c533462c"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Vehicle ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="380" y="603" width="190" height="18" uuid="d410dee1-aac1-4a8c-b8d0-469116a2a901"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="180" y="580" width="201" height="21" uuid="3f00964f-b8c7-4387-828e-19526dac21b4"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Spark Plugs]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="693" width="190" height="18" uuid="4ca2f9c3-bf3a-4f03-9ef2-0fb5187d478b"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Timing Belt ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="190" y="693" width="190" height="18" uuid="d6a430f6-898f-4930-9a16-a8791cca3873"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Vehicle ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="380" y="693" width="190" height="18" uuid="5c0f04b5-a107-4af8-bccc-e714a3e5391b"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="180" y="670" width="201" height="21" uuid="1ce63d4c-2578-44c0-98d5-41d33eaecdd2"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Timing Belt Checks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="783" width="190" height="18" uuid="4bb91f85-6018-4dbc-9c9d-44ea7cca6e08"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Interior Cleaning ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="190" y="783" width="190" height="18" uuid="5989de2b-a293-40fe-b97d-618b2144eb6a"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Vehicle ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="380" y="783" width="190" height="18" uuid="744955f4-dbc7-49a9-93ab-07cb20a78998"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="180" y="760" width="201" height="21" uuid="922c08a8-56d1-4e83-8637-7c0eb8ef6a4b"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Interior Cleaning]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="873" width="190" height="18" uuid="862338b6-fc61-4c86-a884-3f352c9360eb"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Lights Check ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="190" y="873" width="190" height="18" uuid="75aeeae3-4ea8-4d3f-81a1-13c9ae045782"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Vehicle ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="380" y="873" width="190" height="18" uuid="6075e4c1-1733-4a4b-a9b3-5e42dc6e6460"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="180" y="850" width="201" height="21" uuid="3eabc5c8-5ec7-41de-991c-0e2cf03225f8"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Lights Check]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="960" width="70" height="18" uuid="0c685f01-67da-4471-b027-9fdcc1c0757f"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Repair Record ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="180" y="940" width="201" height="21" uuid="df8bf632-f83d-48e3-adf9-df0872bd9131"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Repair Record]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="280" y="243" width="150" height="18" uuid="8d53663a-8397-4cae-a091-bd3785ae906b"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Filter Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="290" y="511" width="140" height="18" uuid="977c651d-70a4-41e8-953d-0919c6ebfddf"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Fluid Type]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="0" y="69" width="571" height="31" uuid="8174cdbe-d4f5-4a4b-86d4-545e76644672">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="InspectionsDataset" uuid="dd836861-8649-4d1f-bc62-50bc8a39b754">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="190" uuid="d1dac1fa-232c-4abe-b37c-0f7c1472667e">
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="d79a76cf-2fd4-4bac-a86a-a9cf99398eae"/>
+								<textFieldExpression><![CDATA[$F{inspection_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="190" uuid="bd136cb6-719f-4346-b682-f8796bc58557">
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="ffd9c004-55c6-4e90-b0a2-5d78c7586f6e"/>
+								<textFieldExpression><![CDATA[$F{vehicle_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="190" uuid="e9d93d7d-78b6-41f8-bfef-af07cce51929">
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="e8aa6c48-c1e3-4989-a943-080dc8646d86"/>
+								<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="161" width="571" height="31" uuid="a798e43c-d2a4-430a-b0ea-ef06e9aa560e">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="OilChangeDataset" uuid="b40372cd-1ff1-4533-a63e-3ccfba00bf40">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="190" uuid="0da83df2-0f42-4d84-99dd-84f9fd7ad798">
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="6657ee60-acf2-4a3e-bcd8-73f073f1a65e"/>
+								<textFieldExpression><![CDATA[$F{oil_change_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="190" uuid="eb0d3191-1a7b-47c2-ac09-fffe0df3647c">
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="924c6ee6-78fd-478a-af46-16a7f05e94f1"/>
+								<textFieldExpression><![CDATA[$F{vehicle_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="190" uuid="c57caf01-9ce2-418c-a4ef-ae356ad22be1">
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="a00d62bb-6bbd-4e6d-b9ed-f8a4e210891d"/>
+								<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="260" width="571" height="31" uuid="b75422e8-2f2f-4250-b5a3-abac7b30e963">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 2_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 2_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 2_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="FilterChangeDataset" uuid="d9d97495-6887-4bc0-aad2-bc6e2535ab1d">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="142" uuid="63edc7e3-44db-47d0-9546-a89defc812c4">
+						<jr:detailCell style="Table 2_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="142" height="30" uuid="69360fd7-45cc-4f0a-b249-6778cad980b3"/>
+								<textFieldExpression><![CDATA[$F{filter_change_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="142" uuid="d7b33f04-b6f4-44a9-ba13-79d7622b73a9">
+						<jr:detailCell style="Table 2_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="142" height="30" uuid="e05f6579-0254-4384-9604-a80c1372495f"/>
+								<textFieldExpression><![CDATA[$F{vehicle_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="142" uuid="641cf4bc-deea-4111-a89f-cbed32160901">
+						<jr:detailCell style="Table 2_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="142" height="30" uuid="abad1e18-0c7e-4ba4-9598-b51b517af6b9"/>
+								<textFieldExpression><![CDATA[$F{filter_type}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="142" uuid="a8fa0759-d2d2-4104-93f0-de455ca32f93">
+						<jr:detailCell style="Table 2_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="142" height="30" uuid="eb123cf5-3ac9-4818-9523-71c1025ee3db"/>
+								<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="349" width="571" height="31" uuid="6efa0255-5a3e-43d5-bd39-6573d93394af">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 3_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 3_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 3_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="TireRotationDataset" uuid="dbd48e7b-1732-46d4-abbf-d4c55c16049d">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="190" uuid="201e1937-54aa-4f4e-9068-f7779d4fb5b3">
+						<jr:detailCell style="Table 3_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="a5ce09e5-59d7-4d60-9536-2b2499f7fc97"/>
+								<textFieldExpression><![CDATA[$F{tire_rotation_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="190" uuid="c2c91dcb-ecc2-49cc-bac0-f32c2ac2b338">
+						<jr:detailCell style="Table 3_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="e6153a45-1dbf-4edf-b23e-55ffbcf99285"/>
+								<textFieldExpression><![CDATA[$F{vehicle_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="190" uuid="82589eb3-c513-40ad-a919-72e9ae85a183">
+						<jr:detailCell style="Table 3_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="c54e251a-8584-4ac9-8fee-dafc7071465b"/>
+								<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="439" width="571" height="31" uuid="f80bf54a-b5af-47f0-8b44-6fd345139a5c">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 4_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 4_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 4_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="TireChangeDataset" uuid="0a0a31eb-b332-4e11-83ab-91607ab1676c">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="190" uuid="957fae9e-acb2-4e85-bb3d-18f9c2bf386f">
+						<jr:detailCell style="Table 4_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="0bce51bb-954f-4d28-bb1a-e69cf71d33cc"/>
+								<textFieldExpression><![CDATA[$F{tire_changes_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="190" uuid="b5a10157-8c7e-41c0-bb4b-c64d0a4c633b">
+						<jr:detailCell style="Table 4_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="7be5ce12-937d-4684-aa96-2266c19f159e"/>
+								<textFieldExpression><![CDATA[$F{vehicle_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="190" uuid="fa4a572d-08a9-4b49-9117-5acda09b4516">
+						<jr:detailCell style="Table 4_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="61732e71-9fe0-45bd-bea7-24abfa66efcd"/>
+								<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="529" width="571" height="31" uuid="37f79866-e1a7-4265-a18a-38230bb3cad9">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 5_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 5_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 5_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="FluidCheckDataset" uuid="f9cbee5e-3064-41dc-a044-4c4df2e9b889">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="142" uuid="18e21527-f3e0-4f60-988e-f54fabb3a1f4">
+						<jr:detailCell style="Table 5_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="142" height="30" uuid="1466bf48-c428-4cdd-a1b2-8967ff48d64e"/>
+								<textFieldExpression><![CDATA[$F{fluid_checks_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="142" uuid="05ec4d3a-354b-414f-b68c-686f28b386cc">
+						<jr:detailCell style="Table 5_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="142" height="30" uuid="1a63a4eb-5524-4787-9c2d-2ce4c3a63954"/>
+								<textFieldExpression><![CDATA[$F{vehicle_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="142" uuid="691e1250-04e5-48c7-89ea-bd8202dc4d02">
+						<jr:detailCell style="Table 5_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="142" height="30" uuid="0a0fd1d0-635f-4d8d-b2a8-fbad2e33b569"/>
+								<textFieldExpression><![CDATA[$F{fluid_type}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="142" uuid="275130db-0a58-466e-96d8-05635dab359d">
+						<jr:detailCell style="Table 5_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="142" height="30" uuid="11092539-ad44-42ce-9cc5-ea06996a2da2"/>
+								<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="619" width="571" height="31" uuid="0076f153-a567-4d32-a50b-ca6780021f99">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 6_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 6_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 6_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="SparkPlugsDataset" uuid="08631d67-306a-4438-9902-98e0d4489581">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="190" uuid="1919e092-8e42-4057-ac76-2560d16e1bca">
+						<jr:detailCell style="Table 6_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="57dc1676-b095-4890-9ed8-d594fa0d8086"/>
+								<textFieldExpression><![CDATA[$F{spark_plugs_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="190" uuid="f7c33d8f-dd13-403d-bccc-7e266343e198">
+						<jr:detailCell style="Table 6_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="04d702e9-1820-4798-805f-2bb28f57fd82"/>
+								<textFieldExpression><![CDATA[$F{vehicle_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="190" uuid="c4f82c94-7a9f-4e4c-8216-398f09f97073">
+						<jr:detailCell style="Table 6_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="d2c39a56-495f-4495-87b3-9de122d618c6"/>
+								<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="709" width="571" height="31" uuid="61c3c8eb-0433-4916-ab0b-6ee24ee26a8a">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 7_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 7_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 7_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="TimingBeltDataset" uuid="8992e82d-b08b-4891-a64c-ea2739aedde4">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="190" uuid="3b96b0ad-a29f-43a4-a5ee-d54475b28c60">
+						<jr:detailCell style="Table 7_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="ece983bf-543e-4f18-998d-8299c92a98a0"/>
+								<textFieldExpression><![CDATA[$F{timing_belt_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="190" uuid="a1c12afd-55cf-44b4-b2ff-9cbddf1c5201">
+						<jr:detailCell style="Table 7_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="8b8e04d1-fbde-4816-b2ff-62031719fd79"/>
+								<textFieldExpression><![CDATA[$F{vehicle_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="190" uuid="1b76de83-e2e0-47cd-a793-138e97bcf168">
+						<jr:detailCell style="Table 7_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="dc27bb6e-389f-4e65-ac76-4e5a860ee785"/>
+								<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="799" width="571" height="31" uuid="461f4538-5b25-4e0c-abef-b0f799685143">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 8_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 8_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 8_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="InteriorCleaning" uuid="037460f4-6e25-4896-88d7-58f1897ed02c">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="190" uuid="dde939f2-d083-4260-9e56-cda01ae88405">
+						<jr:detailCell style="Table 8_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="0597c83b-ab44-4908-a69b-c49088df53da"/>
+								<textFieldExpression><![CDATA[$F{cleaning_interior_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="190" uuid="4523b53f-3f69-4c3b-ba3d-e590a1e5dc08">
+						<jr:detailCell style="Table 8_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="71b1ea73-5fbf-48e3-95a9-94673d409a52"/>
+								<textFieldExpression><![CDATA[$F{vehicle_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="190" uuid="3a8f7c09-362c-4301-950a-1b6ddcb1315f">
+						<jr:detailCell style="Table 8_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="7bc140a6-ce53-4d97-a6cd-8ead1a79abe9"/>
+								<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="889" width="571" height="31" uuid="d6ec4f65-33ff-4d7d-9b8e-f594ecd52a1d">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 9_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 9_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 9_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="LightsCheckDataset" uuid="32fe0af6-f72a-475e-9ca3-e1eebe494c23">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="190" uuid="9d9a4dff-10e2-41e8-a170-027b059b95e8">
+						<jr:detailCell style="Table 9_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="ffe38ae4-2b3d-422f-92fc-94fd83326f8a"/>
+								<textFieldExpression><![CDATA[$F{lights_check_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="190" uuid="ddbb4a54-9769-4200-b93b-7214aacf1f4b">
+						<jr:detailCell style="Table 9_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="b1286f2f-c2e4-456f-862c-5c6300e3071e"/>
+								<textFieldExpression><![CDATA[$F{vehicle_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="190" uuid="b7e61041-f8e6-457b-9e66-c29f031834cf">
+						<jr:detailCell style="Table 9_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="369780f1-155a-4695-963f-1fafe6a98b95"/>
+								<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="979" width="571" height="31" uuid="c96a7559-658f-4c02-b3c8-a899ccc72551">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 10_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 10_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 10_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="RepairRecordDataset" uuid="4d372749-d577-4683-ad52-63061ed0e8bd">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="71" uuid="5909411f-a972-4459-95fe-94736b3f6aa1">
+						<jr:detailCell style="Table 10_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="71" height="30" uuid="cef048e9-ed07-49d6-8eb9-7a2a87664dd7"/>
+								<textFieldExpression><![CDATA[$F{repair_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="71" uuid="d4f93069-f51c-4ddf-8105-d25b03f48d98">
+						<jr:detailCell style="Table 10_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="71" height="30" uuid="b64d8d43-89f2-448c-aa1a-6b1a0cd52686"/>
+								<textFieldExpression><![CDATA[$F{vehicle_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="71" uuid="97c62689-764d-410c-a330-a27ead01fad7">
+						<jr:detailCell style="Table 10_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="71" height="30" uuid="83e8eeb3-6d81-4b84-80a0-8925b6a84d59"/>
+								<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="71" uuid="fc123a64-caba-4730-a7fd-3e09f056fd35">
+						<jr:detailCell style="Table 10_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="71" height="30" uuid="78c8650f-1378-4cd4-8624-be1076bfb989"/>
+								<textFieldExpression><![CDATA[$F{parts_list}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="71" uuid="7cb9071e-97b6-4f37-86f4-e8026c738e69">
+						<jr:detailCell style="Table 10_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="71" height="30" uuid="d0f8de28-a57c-4b4a-bf91-8f35f521c6df"/>
+								<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="71" uuid="a1155657-675e-42a5-bbb8-aabe8a66f474">
+						<jr:detailCell style="Table 10_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="71" height="30" uuid="986df976-d5cf-4e41-ad66-1e118bdbfc08"/>
+								<textFieldExpression><![CDATA[$F{came_from_company_stocks}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="71" uuid="2e0c582f-cd4e-41b0-83ab-a088fdd73a5d">
+						<jr:detailCell style="Table 10_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="71" height="30" uuid="30a1a090-12f1-4e1b-9954-d09ec9e18cad"/>
+								<textFieldExpression><![CDATA[$F{ordered_from}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="71" uuid="13e0a013-00d2-4ccc-b9d5-74de3d06bb8d">
+						<jr:detailCell style="Table 10_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="71" height="30" uuid="4da20bab-1ffc-452a-88ce-ba763dd1a478"/>
+								<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement positionType="Float" x="70" y="960" width="70" height="18" uuid="9e31dd0c-0777-47b6-8398-1bacb608ba36"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Vehicle ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="960" width="70" height="18" uuid="ebace38c-3f5b-414c-9e96-ba1ca5ad12ee"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="210" y="961" width="70" height="18" uuid="db5db033-b328-4a62-aa45-90382ca22f9d"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Parts List]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="280" y="961" width="70" height="18" uuid="1e18627c-e52e-41d2-96b6-fe2c990cb3e2"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="350" y="961" width="70" height="18" uuid="ee2ff6f6-5704-4f29-a218-ce2f10938108"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Stock]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="420" y="960" width="70" height="18" uuid="4a934969-53c9-4efd-af08-9e5d5453a0a9"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Came From]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="492" y="960" width="70" height="18" uuid="048e5c6d-f410-4a8f-829f-16fca631c2e3"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
